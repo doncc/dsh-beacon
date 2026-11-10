@@ -1,0 +1,31 @@
+{
+  "name": "dsh-beacon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Linux tray status beacon for DeepSeek Harness sessions: green = idle, yellow = waiting for you, grey = running.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doncc/dsh-beacon.git"
+  },
+  "main": "plugin/lib/index.js",
+  "exports": {
+    ".": "./plugin/lib/index.js",
+    "./client": "./plugin/lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./plugin/cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

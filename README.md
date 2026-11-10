@@ -35,6 +35,16 @@ DeepSeek Harness（DSH） 在本地跑，一个工作区里可能同时开着好
 
 ## 安装
 
+两条路径，按需要选：
+
+- **只装 DSH 侧**（设置页开关 + 点击跳转，不含托盘）：插件市场收录后给出的就是这条命令。装完设置页会出现「状态灯」分区，但系统托盘里不会有灯。
+
+  ```bash
+  dsh plugin --profile web add github:doncc/dsh-beacon
+  ```
+
+- **要那盏灯**：继续第 1、2 步跑 `./install.sh`；第 4 节的 `--with-plugin` 会在装托盘时顺带装上面这份 DSH 插件。两条装插件的路径二选一即可。
+
 ### 1. 依赖
 
 Debian / Ubuntu：
@@ -106,6 +116,8 @@ WantedBy=default.target
 托盘进程发现 3080 端口没开时会自己退出，所以和 DSH 的启动顺序不敏感：DSH 起来后再 `systemctl --user restart dsh-beacon` 即可。
 
 ### 4. 装 DSH 插件（可选）
+
+> 已经用上面市场那条 `dsh plugin add` 装过，这一步可以跳过。
 
 托盘本体已经能亮、能跳转。插件多给你两样东西：
 

@@ -35,6 +35,16 @@ Why not a single left click: in GNOME's tray protocol a left click always opens 
 
 ## Install
 
+Two paths:
+
+- **DSH side only** (settings toggle + click-to-jump, no tray): this is the command the plugin market will give you once listed. The Settings section appears afterwards, but no dot shows up in the system tray.
+
+  ```bash
+  dsh plugin --profile web add github:doncc/dsh-beacon
+  ```
+
+- **The dot itself**: continue with steps 1 and 2 and run `./install.sh`; `--with-plugin` in step 4 installs the DSH plugin above along with the tray. The two plugin install paths are alternatives, not both.
+
 ### 1. Dependencies
 
 Debian / Ubuntu:
@@ -105,6 +115,8 @@ WantedBy=default.target
 The tray exits on its own when nothing listens on port 3080, so the start order does not matter much: once DSH is up, run `systemctl --user restart dsh-beacon`.
 
 ### 4. Install the DSH plugin (optional)
+
+> Skip this if you already installed it with the market command above.
 
 The tray already lights up and jumps on its own. The plugin adds two things:
 
