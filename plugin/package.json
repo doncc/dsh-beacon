@@ -1,0 +1,26 @@
+{
+  "name": "dsh-beacon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "dsh-beacon：绿=全部完成，黄=等你确认，灰=正在执行；点击跳到最早待确认的对话",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

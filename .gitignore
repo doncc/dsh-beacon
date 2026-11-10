@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.pyo
+tray.pid
+icons/.dot-*.png

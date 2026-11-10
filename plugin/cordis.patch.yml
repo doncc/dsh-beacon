@@ -1,0 +1,5 @@
+# Bundle patch for dsh-beacon.
+# Host 侧只提供两个本机路由：状态灯开关、跳转焦点。
+- insert:
+    - id: dsh-beacon
+      name: 'dsh-beacon'
